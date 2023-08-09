@@ -1,0 +1,25 @@
+
+*{
+    margin:0%;
+    padding:0%;
+  box-sizing:border-box;
+  
+}
+#mycanvas{
+  position:absolute;
+  background-color:black;
+  left:0;
+  right:0;
+}
+body{
+    margin:0 0;
+    padding:0 0;
+}
+
+input{
+    position:absolute;
+    width:calc(100% - 20px);
+    padding:10px;
+    margin:10px;
+    z-index:100;
+}
