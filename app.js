@@ -8,7 +8,18 @@ window.addEventListener('load', function() {
       console.log(ctx)
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-  
+      function drawCopyright() {
+        const copyrightText = '© 2023 adarshraj';
+        const textWidth = ctx.measureText(copyrightText).width;
+        const textHeight = 20; // Adjust this value as needed
+        const x = (canvas.width - textWidth) / 2; // Centered horizontally
+        const y = canvas.height - textHeight - 10; // Position from bottom edge
+    
+        ctx.fillStyle = 'white';
+        ctx.font = '14px Arial';
+        ctx.fillText(copyrightText, canvas.width/2,canvas.height-20);
+    }
+    
       class Particle {
         constructor(effect, x, y, color){
             this.effect = effect;
@@ -153,6 +164,7 @@ window.addEventListener('load', function() {
       function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         effect.render();
+        drawCopyright();
         requestAnimationFrame(animate);
       }
       animate();
